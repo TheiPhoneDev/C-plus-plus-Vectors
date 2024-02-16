@@ -150,7 +150,7 @@ void minore(int v[], int n) {
 void percentualePositivi(int v[], int n) {
   int i=0;
   int pos=0;
-  int perc=0.00;
+  int perc=0;
   
 
   while(i<n) {
