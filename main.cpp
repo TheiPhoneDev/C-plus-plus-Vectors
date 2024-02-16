@@ -12,6 +12,8 @@ const int dimensioneMax = 10;
 void InserimentoeCarica(int v[], int &n);
 void visualizza(int v[], int n);
 void maggiore(int v[], int n);
+void minore(int v[], int n);
+void percentualePositivi(int v[], int n);
 int Menu();
 
 
@@ -36,6 +38,12 @@ int main() {
         case 3:
           maggiore(vettore,N);
           break;
+        case 4:
+        minore(vettore,N);
+        break;
+        case 5:
+        percentualePositivi(vettore,N);
+        break;
         case 0:
           cout<<"Esci"<<endl;
           break;	
@@ -55,6 +63,8 @@ int Menu(){
   cout<<"1-Inserisci un numero (n) e carica il vettore"<<endl;	
   cout<<"2-Visualizza il vettore"<<endl;	
   cout<<"3-Trova il numero maggiore all'interno del vettore"<<endl;
+  cout<<"4-Trova il numero minore all'interno del vettore"<<endl;
+  cout<<"5-Calcola la percentuale di numeri positivi all'interno del vettore"<<endl;
   cout<<"0-Fine"<<endl;	
 
     cout<<"Scegli un operazione: "<<endl;
@@ -115,5 +125,43 @@ void maggiore(int v[], int n){
 
   cout<<"L'elemento maggiore del tuo vettore e' "<<valoreMassimo<<endl;
   cout<<endl;
+  
+}
+
+
+void minore(int v[], int n) {
+  int i=0;
+  int valoreMinimo=v[0];
+
+  while(i<n) {
+    if(v[i]<valoreMinimo){
+      valoreMinimo=v[i];
+    }
+    i++;
+  }
+
+
+  cout<<"L'elemento maggiore del tuo vettore e' "<<valoreMinimo<<endl;
+  cout<<endl;
+}
+
+
+
+void percentualePositivi(int v[], int n) {
+  int i=0;
+  int pos=0;
+  int perc=0.00;
+  
+
+  while(i<n) {
+    if(v[i]>0){
+      pos++;
+    }
+    i++;
+  }
+
+  perc=pos*100/n;
+  cout<<pos<<endl;
+  cout<<"La percentuale dei numeri positivi del vettore e' "<<perc<<"%"<<endl;
   
 }
