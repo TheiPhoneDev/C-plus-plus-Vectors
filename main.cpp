@@ -14,6 +14,7 @@ void visualizza(int v[], int n);
 void maggiore(int v[], int n);
 void minore(int v[], int n);
 void percentualePositivi(int v[], int n);
+float media(int v[], int n);
 int Menu();
 
 
@@ -24,7 +25,7 @@ int main() {
   int N=0;
   int vettore[dimensioneMax];
   int scelta;
-
+  float m=0.00;
   
   do{
       scelta=Menu();
@@ -43,6 +44,9 @@ int main() {
         break;
         case 5:
         percentualePositivi(vettore,N);
+        case 6:
+        m=media(vettore,N);
+        cout<<"La media degli elementi del vettore e': "<<m<<endl;
         break;
         case 0:
           cout<<"Esci"<<endl;
@@ -54,6 +58,7 @@ int main() {
   }while (scelta!=0);
   
 
+  
 
 }
 
@@ -65,6 +70,8 @@ int Menu(){
   cout<<"3-Trova il numero maggiore all'interno del vettore"<<endl;
   cout<<"4-Trova il numero minore all'interno del vettore"<<endl;
   cout<<"5-Calcola la percentuale di numeri positivi all'interno del vettore"<<endl;
+  cout<<"6-Calcola la media degli elementi all'interno del vettore"<<endl;
+
   cout<<"0-Fine"<<endl;	
 
     cout<<"Scegli un operazione: "<<endl;
@@ -167,4 +174,20 @@ void percentualePositivi(int v[], int n) {
   cout<<pos<<endl;
   cout<<"La percentuale dei numeri positivi del vettore e' "<<perc<<"%"<<endl;
   
+}
+
+
+float media(int v[], int n) {
+  float media=0.00;
+  int i=0;
+  int somma=0;
+
+  while(i<n) {
+    somma=somma+v[i];
+    i++;
+  }
+
+  media=float(somma)/n;
+
+  return media;
 }
