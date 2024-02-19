@@ -110,22 +110,25 @@ void visualizza(int v[], int n){
   cout<<endl;
 
 }
+
 void maggiore(int v[], int n){
 
   int i=0;
   int valoreMassimo=0;
+  int pos=0;
 
   while(i<n) {
     if(v[i]>valoreMassimo){
       valoreMassimo=v[i];
+      pos=i;
     }
     i++;
   }
 
-
   cout<<"L'elemento maggiore del tuo vettore e' "<<valoreMassimo<<endl;
+  cout<<"L'elemento maggiore del tuo vettore si trova nella posizione i =  "<<pos<<endl;
   cout<<endl;
-  
+
 }
 
 
